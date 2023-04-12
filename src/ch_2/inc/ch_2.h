@@ -4,7 +4,7 @@
 void print_data_sizes();
 
 
-void exercise_1(const char* datatype); 
+void exercise_1(); 
 void exercise_2();
 void exercise_3();
 void exercise_4();
