@@ -1,6 +1,5 @@
 #include <iostream>
 #include <sstream>
-
 #include "ch_1.h"
 
 int main(int argc, char **argv) {

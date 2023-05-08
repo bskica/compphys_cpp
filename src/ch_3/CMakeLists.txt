@@ -1,4 +1,4 @@
-set(TARGET CH_2)
+set(TARGET CH_3)
 
-add_library(${TARGET} src/ch_2.cpp)
+add_library(${TARGET} src/ch_3.cpp)
 target_include_directories(${TARGET} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/inc)
