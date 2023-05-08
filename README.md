@@ -2,4 +2,4 @@
 
 Examples/practice problems following the text Boudreau and Swanson: Applied Computational Physics 
 
-I am using this to sharpen some dev skills. Run this code at your own peril (Note: some goodies require execution as sudo)
+Currently being used for sharpening general cpp-related skills. May eventually make a full-fledged usable project out of this
