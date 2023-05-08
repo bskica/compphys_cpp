@@ -1,4 +1,4 @@
-#Computational Physics Practice 
+# Computational Physics Practice 
 
 Examples/practice problems following the text Boudreau and Swanson: Applied Computational Physics 
 
