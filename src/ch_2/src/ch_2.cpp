@@ -3,6 +3,7 @@
 #include <cmath>
 #include <limits>
 #include <vector>
+#include <complex>
 
 #include "stats_calc.hpp"
 #include "ch_2.h"
@@ -45,7 +46,6 @@ double gamma_eps(double epsilon) {
     return 1.00 / sqrt(epsilon * (2 - epsilon));
 }
 
-
 void exercise_2() {
     std::cout << "\nProblem 2" << std::endl;
     std::cout << "Please input number of stretch-factors to calculate (beta = 0.9,0.99,0.999,...): " << std::endl;
@@ -56,8 +56,8 @@ void exercise_2() {
         double beta = 1.0 * pow(10, -(i + 1));
         double epsilon = 1.0 - beta;
         std::cout << "Beta: " << beta << "\nEpsilon: " << epsilon << std::endl;
-        std::cout << "Original gamma calc: " << gamma_calc(beta) << std::endl;
-        std::cout << "Epsilon gamma calc: " << gamma_eps(epsilon) << std::endl;
+        std::cout << "Original gamma calc: " << std::setprecision(10) << gamma_calc(beta) << std::endl;
+        std::cout << "Epsilon gamma calc: " << std::setprecision(10) << gamma_eps(epsilon) << std::endl;
     }
 
 
@@ -75,7 +75,12 @@ void exercise_2() {
 }
 
 void exercise_3() {
+    std::complex<double> A (3,7);
+    std::complex<double> B (3,2);
+    std::complex<double> C (10, 2);
 
+    double ex3_1 = 0.5 * ( A.real() * B.imag() + B.real() * C.imag() + C.real() * A.imag() - A.imag() * B.real() - B.imag() * C.real() - C.imag() *A.real() );
+    std::cout << "Ex 3.1: Area of triangle = " << ex3_1 << std::endl;
 }
 void exercise_4() {
 
