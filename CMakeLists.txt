@@ -9,7 +9,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
 
 
-include_directories("inc")
-add_subdirectory("src")
-add_subdirectory("executables")
+include_directories(inc)
+add_subdirectory(libs)
+add_subdirectory(src)
+add_subdirectory(executables)
+
 

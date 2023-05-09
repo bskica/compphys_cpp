@@ -1,3 +1,4 @@
-add_executable(ch_2 examples.cpp)
+set(TARGET ch_2)
+add_executable(${TARGET} examples.cpp)
 
-target_link_libraries(ch_2 PUBLIC CH_2)
+target_link_libraries(${TARGET} PUBLIC stats_calc CH_2)

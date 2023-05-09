@@ -4,6 +4,13 @@
 void print_data_sizes();
 
 
+/* Problem 2 helper funcs*/
+double gamma_calc(double beta);
+double gamma_eps(double epsilon);
+
+
+
+/* Because why not*/
 void exercise_1(); 
 void exercise_2();
 void exercise_3();

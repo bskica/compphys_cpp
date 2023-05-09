@@ -1,8 +1,10 @@
 #include <iostream>
+#include <iomanip>
 #include <cmath>
 #include <limits>
-#include <cstring>
+#include <vector>
 
+#include "stats_calc.hpp"
 #include "ch_2.h"
 
 void print_data_sizes() {
@@ -35,9 +37,43 @@ void exercise_1() {
     std::cout << "  Calculated double result: " << precision_dl << std::endl;
 
 }
-void exercise_2() {
 
+double gamma_calc(double beta) {
+    return 1.00 / sqrt(1 - pow(beta, 2));
 }
+double gamma_eps(double epsilon) {
+    return 1.00 / sqrt(epsilon * (2 - epsilon));
+}
+
+
+void exercise_2() {
+    std::cout << "\nProblem 2" << std::endl;
+    std::cout << "Please input number of stretch-factors to calculate (beta = 0.9,0.99,0.999,...): " << std::endl;
+    int num_gamma;
+    std::cin >> num_gamma;
+    
+    for (int i = 0; i < num_gamma; i++) {
+        double beta = 1.0 * pow(10, -(i + 1));
+        double epsilon = 1.0 - beta;
+        std::cout << "Beta: " << beta << "\nEpsilon: " << epsilon << std::endl;
+        std::cout << "Original gamma calc: " << gamma_calc(beta) << std::endl;
+        std::cout << "Epsilon gamma calc: " << gamma_eps(epsilon) << std::endl;
+    }
+
+
+    double max_beta = 0.0;
+    double frac_error = 1E-3; 
+    double gamma_frac_err = 0;
+
+    while (gamma_frac_err < frac_error) {
+        double max_gamma[2] = {gamma_calc(max_beta), gamma_eps(max_beta)}; 
+        gamma_frac_err = stats_calc::frac_error(max_gamma[0], max_gamma[1]);
+        
+        max_beta += 1E-6;
+    }    
+    std::cout << "Maximum value of beta with fractional error < 1E-3: " << std::setprecision(10) << max_beta << std::endl;
+}
+
 void exercise_3() {
 
 }

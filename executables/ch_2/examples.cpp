@@ -6,5 +6,7 @@
 int main() {
     print_data_sizes();
 
-    exercise_1(); 
+    exercise_1();
+
+    exercise_2(); 
 }
