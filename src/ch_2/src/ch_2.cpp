@@ -74,14 +74,65 @@ void exercise_2() {
     std::cout << "Maximum value of beta with fractional error < 1E-3: " << std::setprecision(10) << max_beta << std::endl;
 }
 
+double cplx_tri_area(const std::complex<double> A, const std::complex<double> B, 
+                     const std::complex<double> C) {
+    return 0.5 * ( A.real() * B.imag() + B.real() * C.imag() 
+                 + C.real() * A.imag() - A.imag() * B.real() 
+                 - B.imag() * C.real() - C.imag() * A.real() );
+}
+
+std::complex<double> cplx_trans(const std::complex<double> X, const std::complex<double> O ) {
+    return X + O;
+}
+
+std::complex<double> cplx_rot(bool dir_cclk, bool radian, double angle, const std::complex<double> Vec) {
+    if (!radian) {
+        // Convert to  radians if input is in degrees
+        angle = angle * M_PI / 180.0;
+    }
+    if (!dir_cclk) {
+        angle = -angle;
+    }
+    std::complex<double> r = std::exp(std::complex<double> (0, angle));
+    return Vec * r;
+}
+
 void exercise_3() {
     std::complex<double> A (3,7);
     std::complex<double> B (3,2);
     std::complex<double> C (10, 2);
 
-    double ex3_1 = 0.5 * ( A.real() * B.imag() + B.real() * C.imag() + C.real() * A.imag() - A.imag() * B.real() - B.imag() * C.real() - C.imag() *A.real() );
-    std::cout << "Ex 3.1: Area of triangle = " << ex3_1 << std::endl;
+    // Problem 3.1
+    double ex3_1 = cplx_tri_area(A, B, C);
+    std::cout << "\nEx 3.1: \nArea of triangle = " << ex3_1 << std::endl;
+    
+    // Problem 3.2
+    std::complex<double> O (4,5);
+    std::complex<double> t_A = cplx_trans(A, O);
+    std::complex<double> t_B = cplx_trans(B, O);
+    std::complex<double> t_C = cplx_trans(C, O);
+
+    std::cout << "Translated Vectors: " << std::endl;
+    std::cout << "  A' = " << t_A       << std::endl;
+    std::cout << "  B' = " << t_B       << std::endl;
+    std::cout << "  C' = " << t_C       << std::endl;
+
+    std::cout << "Area ABC' : " << cplx_tri_area(t_A, t_B, t_C) << std::endl;
+    
+    
+    // Problem 3.3 
+    std::complex<double> rot_A = cplx_rot(0, 0, 45, t_A);
+    std::complex<double> rot_B = cplx_rot(0, 0, 45, t_B);
+    std::complex<double> rot_C = cplx_rot(0, 0, 45, t_C);
+
+    std::cout << "Rotated Vectors: " << std::endl;
+    std::cout << "  A\" = " << rot_A  << std::endl;
+    std::cout << "  B\" = " << rot_B  << std::endl;
+    std::cout << "  C\" = " << rot_C  << std::endl;
+    std::cout << "Area ABC\" : " << cplx_tri_area(rot_A, rot_B, rot_C) << std::endl;
 }
+
+
 void exercise_4() {
 
 }
