@@ -104,7 +104,7 @@ void exercise_3() {
 
     // Problem 3.1
     double ex3_1 = cplx_tri_area(&A, &B, &C);
-    std::cout << "\nEx 3.1: \nArea of triangle = " << ex3_1 << std::endl;
+    std::cout << "\nProblem 3: \nArea of triangle ABC = " << ex3_1 << std::endl;
     
     // Problem 3.2
     std::complex<double> O (4,5);
