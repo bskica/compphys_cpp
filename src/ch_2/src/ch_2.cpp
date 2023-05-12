@@ -104,7 +104,7 @@ void exercise_3() {
 
     // Problem 3.1
     double ex3_1 = cplx_tri_area(&A, &B, &C);
-    std::cout << "\nProblem 3: \nArea of triangle ABC = " << ex3_1 << std::endl;
+    std::cout << "\nProblem 3 \n  Area of triangle ABC = " << ex3_1 << std::endl;
     
     // Problem 3.2
     std::complex<double> O (4,5);
@@ -112,12 +112,12 @@ void exercise_3() {
     std::complex<double> t_B = cplx_trans(&B, &O);
     std::complex<double> t_C = cplx_trans(&C, &O);
 
-    std::cout << "Translated Vectors: " << std::endl;
-    std::cout << "  A' = " << t_A       << std::endl;
-    std::cout << "  B' = " << t_B       << std::endl;
-    std::cout << "  C' = " << t_C       << std::endl;
+    std::cout << "  Translated Vectors: " << std::endl;
+    std::cout << "      A' = " << t_A       << std::endl;
+    std::cout << "      B' = " << t_B       << std::endl;
+    std::cout << "      C' = " << t_C       << std::endl;
 
-    std::cout << "Area ABC' : " << cplx_tri_area(&t_A, &t_B, &t_C) << std::endl;
+    std::cout << "  Area ABC' : " << cplx_tri_area(&t_A, &t_B, &t_C) << std::endl;
     
     
     // Problem 3.3 
@@ -125,11 +125,11 @@ void exercise_3() {
     std::complex<double> rot_B = cplx_rot(0, 0, 45, &t_B);
     std::complex<double> rot_C = cplx_rot(0, 0, 45, &t_C);
 
-    std::cout << "Rotated Vectors: " << std::endl;
-    std::cout << "  A\" = " << rot_A  << std::endl;
-    std::cout << "  B\" = " << rot_B  << std::endl;
-    std::cout << "  C\" = " << rot_C  << std::endl;
-    std::cout << "Area ABC\" : " << cplx_tri_area(&rot_A, &rot_B, &rot_C) << std::endl;
+    std::cout << "  Rotated Vectors: " << std::endl;
+    std::cout << "    A\" = " << rot_A  << std::endl;
+    std::cout << "    B\" = " << rot_B  << std::endl;
+    std::cout << "    C\" = " << rot_C  << std::endl;
+    std::cout << "  Area ABC\" : " << cplx_tri_area(&rot_A, &rot_B, &rot_C) << std::endl;
 }
 
 
