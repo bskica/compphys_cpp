@@ -13,10 +13,10 @@ double gamma_calc(double beta);
 double gamma_eps(double epsilon);
 
 /* Problem 3 helper funcs*/
-double cplx_tri_area(const std::complex<double> A, const std::complex<double> B, 
-                     const std::complex<double> C); 
-std::complex<double> cplx_trans(const std::complex<double> X, const std::complex<double> O );
-std::complex<double> cplx_rot(bool dir_cclk, bool radian, double angle, const std::complex<double> Vec);
+double cplx_tri_area(const std::complex<double>* A, const std::complex<double>* B, 
+                     const std::complex<double>* C); 
+std::complex<double> cplx_trans(const std::complex<double>* X, const std::complex<double> O );
+std::complex<double> cplx_rot(bool dir_cclk, bool radian, double angle, const std::complex<double>* Vec);
 
 
 /* Because why not*/
